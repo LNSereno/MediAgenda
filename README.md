@@ -19,9 +19,8 @@ O sistema busca facilitar a rotina administrativa de clínicas de pequeno e méd
 ## Equipe
 | Nome | email |
 | --- | --- |
-| Gabriel Araujo Boeckmann e Silva | gabs@cesar.school |
 | Henrique Neves Pontual | hnp@cesar.school |
-| Lucas Nery Sereno |  |
+| Lucas Nery Sereno |  | lns3@cesar.school |
 | Pedro Freitas Lustosa de Caravalho | pflc@cesar.school |
 | Rubens Sousa Carvalho da Rocha | rscr@cesar.school |
 
