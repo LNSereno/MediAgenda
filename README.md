@@ -24,6 +24,14 @@ O sistema busca facilitar a rotina administrativa de clínicas de pequeno e méd
 | Pedro Freitas Lustosa de Caravalho | pflc@cesar.school |
 | Rubens Sousa Carvalho da Rocha | rscr@cesar.school |
 
+## Alterações na equipe
+
+Não houve entrada ou saída de integrantes registrada até esta entrega.
+
+| Membro | E-mail CESAR School | Entrada | Saída |
+| --- | --- | --- | --- |
+| Nenhuma alteração registrada | - | - | - |
+
 ## Entrega 1
 
 - [Histórias em BDD](./Histórias_BDD.md)
