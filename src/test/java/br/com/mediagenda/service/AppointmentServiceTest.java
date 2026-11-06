@@ -31,14 +31,14 @@ class AppointmentServiceTest {
 
     @Test void confirmsAnScheduledAppointment() {
         Appointment appointment = new Appointment();
-        when(appointmentRepository.findById(1L)).thenReturn(Optional.of(appointment));
+        when(appointmentRepository.lockById(1L)).thenReturn(Optional.of(appointment));
         service.confirm(1L);
         assertEquals(AppointmentStatus.CONFIRMADA, appointment.getStatus());
     }
 
     @Test void cancelsAppointmentAndKeepsReason() {
         Appointment appointment = new Appointment();
-        when(appointmentRepository.findById(1L)).thenReturn(Optional.of(appointment));
+        when(appointmentRepository.lockById(1L)).thenReturn(Optional.of(appointment));
         service.cancel(1L, "Imprevisto pessoal");
         assertEquals(AppointmentStatus.CANCELADA, appointment.getStatus());
         assertEquals("Imprevisto pessoal", appointment.getCancellationReason());

@@ -21,6 +21,11 @@ public class Patient {
     @Email
     private String email;
 
+    @jakarta.validation.constraints.PastOrPresent
+    private java.time.LocalDate birthDate;
+    public java.time.LocalDate getBirthDate() { return birthDate; }
+    public void setBirthDate(java.time.LocalDate birthDate) { this.birthDate = birthDate; }
+
     public Long getId() { return id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

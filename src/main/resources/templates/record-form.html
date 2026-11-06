@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar prontuário | MediAgenda</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header><img th:src="@{/logo.svg}" alt=""><strong>MediAgenda</strong></header>
+<main>
+  <nav><a href="/">Voltar à agenda</a></nav>
+
+  <section>
+    <h1>Registrar prontuário</h1>
+    <p><strong th:text="${appointment.patient.name}"></strong> •
+      <span th:text="${#temporals.format(appointment.scheduledAt, 'dd/MM/yyyy HH:mm')}"></span> •
+      <span th:text="${appointment.doctor.name}"></span></p>
+    <p class="message error" role="alert" th:if="${error}" th:text="${error}"></p>
+    <form class="clinical" method="post" th:action="@{/appointments/{id}/record(id=${appointment.id})}">
+      <label>Diagnóstico<textarea name="diagnosis" rows="3" maxlength="4000" required th:text="${diagnosis}"></textarea></label>
+      <label>Prescrição<textarea name="prescription" rows="3" maxlength="4000" required th:text="${prescription}"></textarea></label>
+      <label>Observações (opcional)<textarea name="notes" rows="2" maxlength="4000" th:text="${notes}"></textarea></label>
+      <button>Salvar prontuário</button>
+    </form>
+  </section>
+</main></body></html>

@@ -1,5 +1,5 @@
 package br.com.mediagenda.domain;
 
 public enum AppointmentStatus {
-    AGENDADA, CONFIRMADA, CANCELADA
+    AGENDADA, CONFIRMADA, CANCELADA, REALIZADA
 }

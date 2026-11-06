@@ -47,11 +47,16 @@ public class AppointmentService {
     @Transactional
     public void cancel(Long id, String reason) {
         Appointment appointment = getById(id);
-        if (appointment.getStatus() == AppointmentStatus.CANCELADA) throw new IllegalStateException("A consulta já foi cancelada.");
+        if (!appointment.isOpen()) throw new IllegalStateException("Somente consultas em aberto podem ser canceladas.");
         if (reason == null || reason.isBlank()) throw new IllegalArgumentException("Informe o motivo do cancelamento.");
         appointment.setStatus(AppointmentStatus.CANCELADA);
         appointment.setCancellationReason(reason.trim());
     }
 
-    private Appointment getById(Long id) { return appointmentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Consulta não encontrada.")); }
+    @Transactional
+    public void complete(Long id) {
+        getById(id).complete();
+    }
+
+    private Appointment getById(Long id) { return appointmentRepository.lockById(id).orElseThrow(() -> new IllegalArgumentException("Consulta não encontrada.")); }
 }

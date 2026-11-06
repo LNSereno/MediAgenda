@@ -85,6 +85,11 @@ public class WebController {
     @PostMapping("/appointments/{id}/cancel")
     public String cancel(@PathVariable Long id, @RequestParam String reason, RedirectAttributes redirect) { return changeStatus(() -> appointmentService.cancel(id, reason), redirect, "Consulta cancelada; horário liberado."); }
 
+    @PostMapping("/appointments/{id}/complete")
+    public String complete(@PathVariable Long id, RedirectAttributes redirect) {
+        return changeStatus(() -> appointmentService.complete(id), redirect, "Atendimento concluído.");
+    }
+
     private String changeStatus(Runnable action, RedirectAttributes redirect, String success) {
         try { action.run(); redirect.addFlashAttribute("success", success); }
         catch (IllegalArgumentException | IllegalStateException exception) { redirect.addFlashAttribute("error", exception.getMessage()); }

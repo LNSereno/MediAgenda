@@ -24,6 +24,18 @@ public class Appointment {
     private AppointmentStatus status = AppointmentStatus.AGENDADA;
     private String cancellationReason;
 
+    public boolean isOpen() {
+        return status == AppointmentStatus.AGENDADA || status == AppointmentStatus.CONFIRMADA;
+    }
+
+    public void complete() {
+        if (!isOpen()) throw new IllegalStateException("Somente atendimentos em aberto podem ser concluídos.");
+        if (scheduledAt.isAfter(LocalDateTime.now())) {
+            throw new IllegalStateException("A consulta ainda não chegou ao horário agendado.");
+        }
+        status = AppointmentStatus.REALIZADA;
+    }
+
     public Long getId() { return id; }
     public Patient getPatient() { return patient; }
     public void setPatient(Patient patient) { this.patient = patient; }
