@@ -42,9 +42,9 @@ class ClinicalWebTest {
         web.perform(get(history)).andExpect(content().string(org.hamcrest.Matchers.containsString("ainda não possui")));
         web.perform(post("/appointments").param("patientId", patient.getId().toString())
                 .param("doctorId", doctor.getId().toString()).param("scheduledAt", "2025-08-12T09:00"))
-                .andExpect(redirectedUrl("/"));
+                .andExpect(redirectedUrl("/agenda"));
         String visit = "/appointments/" + appointments.findAll().stream().filter(a -> a.getDoctor().getId().equals(doctor.getId())).findFirst().orElseThrow().getId();
-        web.perform(post(visit + "/complete")).andExpect(redirectedUrl("/"));
+        web.perform(post(visit + "/complete")).andExpect(redirectedUrl("/agenda"));
         web.perform(get("/")).andExpect(content().string(org.hamcrest.Matchers.containsString("REALIZADA")));
         web.perform(get(visit + "/record")).andExpect(content().string(org.hamcrest.Matchers.containsString("Salvar prontuário")));
         web.perform(post(visit + "/record").param("diagnosis", "Revisão de rotina")
@@ -70,13 +70,13 @@ class ClinicalWebTest {
         web.perform(post("/appointments").param("patientId", patient.getId().toString())
                 .param("doctorId", doctor.getId().toString()).param("scheduledAt", time.toString()))
                 .andExpect(flash().attribute("error", "O médico já possui uma consulta nesse horário."));
-        web.perform(post(url + "/confirm")).andExpect(redirectedUrl("/"));
+        web.perform(post(url + "/confirm")).andExpect(redirectedUrl("/agenda"));
         assertEquals(br.com.mediagenda.domain.AppointmentStatus.CONFIRMADA,
                 appointments.findById(appointment.getId()).orElseThrow().getStatus());
         web.perform(get(url)).andExpect(status().isOk());
         web.perform(post(url + "/cancel").param("reason", " "))
                 .andExpect(flash().attribute("error", "Informe o motivo do cancelamento."));
-        web.perform(post(url + "/cancel").param("reason", "Imprevisto pessoal")).andExpect(redirectedUrl("/"));
+        web.perform(post(url + "/cancel").param("reason", "Imprevisto pessoal")).andExpect(redirectedUrl("/agenda"));
         var cancelled = appointments.findById(appointment.getId()).orElseThrow();
         assertEquals(br.com.mediagenda.domain.AppointmentStatus.CANCELADA, cancelled.getStatus());
         assertEquals("Imprevisto pessoal", cancelled.getCancellationReason());
