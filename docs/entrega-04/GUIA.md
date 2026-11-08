@@ -14,8 +14,8 @@ Esta etapa conclui as histórias restantes do produto.
 
 ## Referências
 
-- [Histórias BDD originais](../../Histórias_BDD.md)
-- [Protótipo da entrega 1](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi)
+- [Histórias BDD](../../Histórias_BDD.md)
+- [Protótipo Figma](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi)
 - [Cenários adicionais e critérios de aceite](../cenarios-validacao.md)
 - [Como executar](../../README.md#como-executar)
 - [Issue desta etapa](https://github.com/LNSereno/MediAgenda/issues/2)
@@ -26,7 +26,7 @@ Gravar a aplicação Spring Boot em execução, com áudio ou legendas. Siga est
 
 1. Use apenas dados fictícios. Para demonstrar a conclusão, agende três atendimentos em datas e horários anteriores ao momento da gravação.
 2. Abra uma consulta em **Ver consulta**, clique **Concluir atendimento** e mostre REALIZADA.
-3. Abra **Abrir prontuário**. Mostre os campos e o histórico na mesma tela, como no protótipo.
+3. Abra **Abrir prontuário**. Mostre os campos e o histórico na mesma tela, com os registros do paciente.
 4. Preencha diagnóstico “Consulta inicial”, prescrição “Orientações de acompanhamento” e observações “Dados fictícios para demonstração acadêmica”. Salve.
 5. Repita com outros dois atendimentos, usando diagnósticos “Acompanhamento” e “Consulta de rotina”.
 6. Na tabela de pacientes, abra o nome. Mostre os três prontuários do mais recente ao mais antigo e abra os detalhes para ler prescrição e observações.
