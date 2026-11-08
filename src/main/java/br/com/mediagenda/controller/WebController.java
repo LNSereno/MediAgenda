@@ -38,7 +38,7 @@ public class WebController {
         binder.setDisallowedFields("id");
     }
 
-    @GetMapping("/")
+    @GetMapping({"/", "/agenda"})
     public String home(Model model) {
         model.addAttribute("appointments", appointmentRepository.findAll());
         model.addAttribute("patients", patientRepository.findAll());
@@ -68,7 +68,7 @@ public class WebController {
             return "patient-form";
         }
         redirect.addFlashAttribute("success", "Paciente cadastrado com sucesso.");
-        return "redirect:/";
+        return "redirect:/agenda";
     }
 
     @GetMapping("/doctors/new")
@@ -86,7 +86,7 @@ public class WebController {
             return "doctor-form";
         }
         redirect.addFlashAttribute("success", "Médico cadastrado com sucesso.");
-        return "redirect:/";
+        return "redirect:/agenda";
     }
 
     @GetMapping("/appointments/new")
@@ -102,7 +102,7 @@ public class WebController {
         } catch (IllegalArgumentException | IllegalStateException exception) {
             redirect.addFlashAttribute("error", exception.getMessage());
         }
-        return "redirect:/";
+        return "redirect:/agenda";
     }
 
     @PostMapping("/appointments/{id}/confirm")
@@ -119,7 +119,7 @@ public class WebController {
     private String changeStatus(Runnable action, RedirectAttributes redirect, String success) {
         try { action.run(); redirect.addFlashAttribute("success", success); }
         catch (IllegalArgumentException | IllegalStateException exception) { redirect.addFlashAttribute("error", exception.getMessage()); }
-        return "redirect:/";
+        return "redirect:/agenda";
     }
     private void loadParticipants(Model model) { model.addAttribute("patients", patientRepository.findAll()); model.addAttribute("doctors", doctorRepository.findAll()); }
 }
