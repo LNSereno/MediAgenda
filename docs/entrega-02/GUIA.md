@@ -1,7 +1,5 @@
 # Entrega 02 — Cadastros e agendamento
 
-Complementação organizada em 08/11/2026. O prazo original desta etapa já passou. Os artefatos abaixo descrevem a versão atual e os fluxos correspondentes à etapa.
-
 ## Histórias implementadas (POST-IT)
 
 ### História 1 — Cadastro de paciente
@@ -18,8 +16,8 @@ Complementação organizada em 08/11/2026. O prazo original desta etapa já pass
 
 ## Referências
 
-- [Histórias BDD originais](../../Histórias_BDD.md)
-- [Protótipo da entrega 1](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi)
+- [Histórias BDD](../../Histórias_BDD.md)
+- [Protótipo Figma](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi)
 - [Cenários adicionais e critérios de aceite](../cenarios-validacao.md)
 - [Como executar](../../README.md#como-executar)
 - [Issue desta etapa](https://github.com/LNSereno/MediAgenda/issues/3)
