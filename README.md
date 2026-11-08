@@ -51,12 +51,46 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 
 ## Entrega 02
 
+### Histórias implementadas
+
+> **História 1 — Cadastro de paciente**
+>
+> Como recepcionista da clínica, quero cadastrar um novo paciente no sistema, para que ele possa agendar consultas futuramente.
+
+> **História 2 — Cadastro de médico**
+>
+> Como administrador do consultório, quero cadastrar um médico com sua especialidade, para que ele possa ser associado a consultas.
+
+> **História 3 — Agendamento de consulta**
+>
+> Como paciente ou recepcionista, quero agendar uma consulta com um médico em uma data e horário específicos, para garantir o atendimento.
+
 - [Histórias em BDD](./docs/entrega-02/Historias_BDD.md)
 
 ## Entrega 03
 
+### Histórias implementadas
+
+> **História 4 — Cancelamento de consulta**
+>
+> Como paciente, quero cancelar uma consulta agendada, para liberar o horário caso eu não possa comparecer.
+
+> **História 5 — Confirmação de consulta**
+>
+> Como paciente, quero confirmar minha presença em uma consulta agendada, para que a clínica saiba que devo comparecer.
+
 - [Histórias em BDD](./docs/entrega-03/Historias_BDD.md)
 
 ## Entrega 04
+
+### Histórias implementadas
+
+> **História 6 — Registro de prontuário**
+>
+> Como médico, quero registrar diagnóstico e prescrição após atender um paciente, para manter o histórico clínico atualizado.
+
+> **História 7 — Histórico do paciente**
+>
+> Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
 
 - [Histórias em BDD](./docs/entrega-04/Historias_BDD.md)
