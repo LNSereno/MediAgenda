@@ -49,6 +49,7 @@ public class AppointmentService {
         Appointment appointment = getById(id);
         if (!appointment.isOpen()) throw new IllegalStateException("Somente consultas em aberto podem ser canceladas.");
         if (reason == null || reason.isBlank()) throw new IllegalArgumentException("Informe o motivo do cancelamento.");
+        if (reason.strip().length() > 255) throw new IllegalArgumentException("O motivo deve ter até 255 caracteres.");
         appointment.setStatus(AppointmentStatus.CANCELADA);
         appointment.setCancellationReason(reason.trim());
     }

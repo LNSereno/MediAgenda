@@ -33,6 +33,11 @@ public class WebController {
         this.appointmentService = appointmentService;
     }
 
+    @org.springframework.web.bind.annotation.InitBinder
+    public void protectIdentifiers(org.springframework.web.bind.WebDataBinder binder) {
+        binder.setDisallowedFields("id");
+    }
+
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("appointments", appointmentRepository.findAll());
