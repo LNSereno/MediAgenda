@@ -52,8 +52,6 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 | 03 | Histórias 4 e 5 — cancelar e confirmar | [Guia e dois roteiros](docs/entrega-03/GUIA.md) |
 | 04 | Histórias 6 e 7 — prontuário e histórico | [Guia e dois roteiros](docs/entrega-04/GUIA.md) |
 
-A entrega 02 foi complementada após o prazo original. A revisão e a organização das etapas 02 e 03 foram realizadas em 08/11/2026. As datas efetivas de implementação e acompanhamento constam nos commits e nas Issues do GitHub.
-
 ## Entrega 1
 
 - [Histórias em BDD](./Histórias_BDD.md)
@@ -118,4 +116,4 @@ O projeto usa quatro entidades persistidas, Spring Boot, Thymeleaf e H2. Cada hi
 
 [Registro dos testes e verificações](docs/entrega-04/verificacao.md). Os oito testes passaram na revisão de 08/11/2026.
 
-A entrega documental fica completa depois que a equipe publicar os seis vídeos das etapas 02 a 04 e incluir as capturas atuais das Issues 02 e 03. O histórico semanal exigido pelo professor deve ser avaliado pelas datas reais do GitHub.
+A entrega documental fica completa depois que a equipe publicar os seis vídeos das etapas 02 a 04 e incluir as capturas atuais das Issues 02 e 03.
