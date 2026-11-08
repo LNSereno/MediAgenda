@@ -52,14 +52,11 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 ## Entrega 02
 
 - [Histórias em BDD](./docs/entrega-02/Historias_BDD.md)
-- [Protótipo Lo-Fi (Figma)](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda?node-id=1-215)
 
 ## Entrega 03
 
 - [Histórias em BDD](./docs/entrega-03/Historias_BDD.md)
-- [Protótipo Lo-Fi (Figma)](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda?node-id=3-48)
 
 ## Entrega 04
 
 - [Histórias em BDD](./docs/entrega-04/Historias_BDD.md)
-- [Protótipo Lo-Fi (Figma)](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda?node-id=3-86)
