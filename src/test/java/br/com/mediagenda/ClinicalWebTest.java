@@ -19,6 +19,14 @@ class ClinicalWebTest {
     @Autowired AppointmentRepository appointments;
 
     @Test
+    void registrationFormsRender() throws Exception {
+        web.perform(get("/patients/new")).andExpect(status().isOk());
+        web.perform(get("/doctors/new")).andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Cardiologia")));
+        web.perform(get("/appointments/new")).andExpect(status().isOk());
+    }
+
+    @Test
     void receptionAndDoctorCanCompleteAVisitAndReadTheSavedRecord() throws Exception {
         web.perform(post("/patients").param("name", "Ana Teste").param("cpf", "00000000000")
                 .param("email", "ana@example.org").param("phone", "8100000000")
