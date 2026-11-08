@@ -16,7 +16,7 @@ Clínicas precisam manter os dados de pacientes e médicos, organizar os horári
 
 ## Solução e evolução
 
-A entrega 1 definiu as sete histórias em BDD e as telas no Figma. A implementação foi organizada em cadastros e agendamento na etapa 2, confirmação e cancelamento na etapa 3 e prontuário e histórico na etapa 4. A etapa 2 foi complementada posteriormente. A equipe deve apresentar essa sequência com as datas reais do GitHub.
+A entrega 1 definiu as sete histórias em BDD e as telas no Figma. A implementação foi organizada em cadastros e agendamento na etapa 2, confirmação e cancelamento na etapa 3 e prontuário e histórico na etapa 4.
 
 ## Fluxo de trabalho e ferramentas
 
@@ -42,7 +42,7 @@ Prepare os cadastros e três prontuários antes de começar.
 
 ## Lições aprendidas
 
-A equipe deve selecionar exemplos que realmente vivenciou. Pontos observáveis no repositório para discutir no ensaio são o retrabalho para alinhar os cadastros aos cenários, o efeito de pular uma etapa e a utilidade dos testes de regras e do fluxo web. Cada integrante deve dizer o que aprendeu e qual trecho consegue explicar.
+A equipe deve selecionar exemplos que realmente vivenciou. Pontos observáveis no repositório para discutir no ensaio são a validação dos cadastros, o tratamento de conflitos de agenda e a utilidade dos testes de regras e do fluxo web. Cada integrante deve dizer o que aprendeu e qual trecho consegue explicar.
 
 ## Antes de apresentar
 
