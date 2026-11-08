@@ -41,23 +41,13 @@ mvn test
 mvn spring-boot:run
 ```
 
-Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os dados entre execuções. Use dados fictícios nas gravações.
-
-## Sequência das entregas
-
-| Etapa | Escopo | Material |
-| --- | --- | --- |
-| 01 | Sete histórias em BDD e protótipo Lo-Fi | Links originais abaixo |
-| 02 | Histórias 1, 2 e 3 — pacientes, médicos e agenda | [Guia e dois roteiros](docs/entrega-02/GUIA.md) |
-| 03 | Histórias 4 e 5 — cancelar e confirmar | [Guia e dois roteiros](docs/entrega-03/GUIA.md) |
-| 04 | Histórias 6 e 7 — prontuário e histórico | [Guia e dois roteiros](docs/entrega-04/GUIA.md) |
+Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os dados entre execuções.
 
 ## Entrega 1
 
 - [Histórias em BDD](./Histórias_BDD.md)
 - [Protótipo Lo-Fi (Figma)](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi?node-id=3-46&p=f&t=iy5O8tKdYP0rVKmC-0)
 - [Screencast (YouTube)](https://youtu.be/cMknoEeaaEY)
-
 
 ## Entrega 02
 
@@ -69,12 +59,7 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 
 > **História 3** — Como paciente ou recepcionista, quero agendar uma consulta com um médico em uma data e horário específicos, para garantir o atendimento.
 
-[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-02/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/3)
-
-Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la nesta seção, conforme o guia.
-
-- Vídeo de uso no YouTube — **A gravar**.
-- Vídeo de código no YouTube — **A gravar**.
+[Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/3)
 
 ## Entrega 03
 
@@ -84,12 +69,7 @@ Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la n
 
 > **História 5** — Como paciente, quero confirmar minha presença em uma consulta agendada, para que a clínica saiba que devo comparecer.
 
-[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-03/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/4)
-
-Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la nesta seção, conforme o guia.
-
-- Vídeo de uso no YouTube — **A gravar**.
-- Vídeo de código no YouTube — **A gravar**.
+[Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/4)
 
 ## Entrega 04
 
@@ -99,21 +79,6 @@ Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la n
 
 > **História 7** — Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
 
-[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-04/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/2)
+[Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/2)
 
 ![Captura da Issue da entrega 04](docs/entrega-04/issue-02.jpg)
-
-- Vídeo de uso no YouTube — **A gravar**.
-- Vídeo de código no YouTube — **A gravar**.
-
-## Apresentação final
-
-[Roteiro de 7 minutos e 30 segundos, com demonstração e divisão sugerida entre os integrantes](docs/apresentacao-final.md).
-
-## Verificação
-
-O projeto usa quatro entidades persistidas, Spring Boot, Thymeleaf e H2. Cada história consulta ou grava dados no banco. Getters, setters e construtores são escritos explicitamente.
-
-[Registro dos testes e verificações](docs/entrega-04/verificacao.md). Os oito testes passaram na revisão de 08/11/2026.
-
-A entrega documental fica completa depois que a equipe publicar os seis vídeos das etapas 02 a 04 e incluir as capturas atuais das Issues 02 e 03.
