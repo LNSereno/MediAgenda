@@ -1,3 +1,5 @@
+# Entrega 04
+
 ### História 6: Registro de Prontuário após Consulta
 Como médico, quero registrar diagnóstico e prescrição após atender um paciente, para manter o histórico clínico atualizado.
 - Cenário: Registro de prontuário de consulta realizada<br>
@@ -5,7 +7,6 @@ Como médico, quero registrar diagnóstico e prescrição após atender um pacie
     Quando o médico preenche diagnóstico, prescrição e observações<br>
     E clica em "Salvar prontuário"<br>
     Então um novo prontuário deve ser criado, vinculado à consulta e ao paciente
-
 
 ### História 7: Consulta ao Histórico do Paciente
 Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
