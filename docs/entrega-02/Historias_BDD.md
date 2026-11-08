@@ -1,3 +1,5 @@
+# Entrega 02
+
 ### História 1: Cadastro de Paciente
 Como recepcionista da clínica, quero cadastrar um novo paciente no sistema, para que ele possa agendar consultas futuramente.
 - Cenário: Cadastro de paciente com dados válidos<br>
@@ -7,7 +9,6 @@ Como recepcionista da clínica, quero cadastrar um novo paciente no sistema, par
   	Então o paciente deve ser criado com sucesso<br>
   	E deve aparecer na lista de pacientes cadastrados
 
-
 ### História 2: Cadastro de Médico
 Como administrador do consultório, quero cadastrar um médico com sua especialidade, para que ele possa ser associado a consultas.
 - Cenário: Cadastro de médico com especialidade<br>
@@ -16,7 +17,6 @@ Como administrador do consultório, quero cadastrar um médico com sua especiali
     E clico em "Salvar"<br>
     Então o médico deve ser criado com sucesso<br>
     E deve estar disponível para ser selecionado ao agendar consultas
-
 
 ### História 3: Agendamento de Consulta
 Como paciente ou recepcionista, quero agendar uma consulta com um médico em uma data e horário específicos, para garantir o atendimento.
