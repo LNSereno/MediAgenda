@@ -67,6 +67,8 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 
 - [Histórias em BDD](./docs/entrega-02/Historias_BDD.md)
 
+![Issues da entrega 02](./docs/entrega-02/issues.png)
+
 ## Entrega 03
 
 ### Histórias implementadas
@@ -81,6 +83,8 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 
 - [Histórias em BDD](./docs/entrega-03/Historias_BDD.md)
 
+![Issues da entrega 03](./docs/entrega-03/issues.png)
+
 ## Entrega 04
 
 ### Histórias implementadas
@@ -94,3 +98,5 @@ Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os d
 > Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
 
 - [Histórias em BDD](./docs/entrega-04/Historias_BDD.md)
+
+![Issues da entrega 04](./docs/entrega-04/issues.png)
