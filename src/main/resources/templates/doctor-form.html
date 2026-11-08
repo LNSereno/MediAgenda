@@ -1,1 +1,24 @@
-<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><title>Novo médico</title><link rel="stylesheet" th:href="@{/css/style.css}"></head><body><main><a th:href="@{/}">← Voltar</a><h1>Cadastrar médico</h1><form th:action="@{/doctors}" th:object="${doctor}" method="post"><label>Nome<input th:field="*{name}" required></label><label>CRM<input th:field="*{crm}" required></label><label>Especialidade<input list="especialidades" th:field="*{specialty}" required><datalist id="especialidades"><option value="Clínica médica"></option><option value="Cardiologia"></option><option value="Pediatria"></option><option value="Dermatologia"></option></datalist></label><label>Telefone<input type="tel" th:field="*{phone}" required></label><label>E-mail<input type="email" th:field="*{email}" required></label><p class="message error" th:each="err : ${#fields.allErrors()}" th:text="${err}"></p><button>Salvar médico</button></form></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastrar médico | MediAgenda</title><link rel="stylesheet" th:href="@{/css/clinical.css}"></head>
+<body><main class="clinical-screen registration">
+<h1>Cadastrar médico</h1>
+<form th:action="@{/doctors}" th:object="${doctor}" method="post">
+<p class="notice error" th:each="err : ${#fields.allErrors()}" th:text="${err}"></p>
+<label for="name">Nome completo</label>
+<input id="name" type="text" th:field="*{name}" placeholder="Nome do médico" required>
+<label for="crm">CRM</label>
+<input id="crm" type="text" th:field="*{crm}" placeholder="000000-PE" required>
+<label for="phone">Telefone</label>
+<input id="phone" type="tel" th:field="*{phone}" placeholder="(00) 00000-0000" required>
+<label for="email">Email</label>
+<input id="email" type="email" th:field="*{email}" placeholder="medico@email.com" required>
+<label for="specialty">Especialidade</label>
+<select id="specialty" th:field="*{specialty}" required>
+<option value="">Selecione a especialidade</option>
+<option>Cardiologia</option><option>Clínica médica</option><option>Dermatologia</option>
+<option>Ginecologia</option><option>Neurologia</option><option>Ortopedia</option>
+<option>Pediatria</option><option>Psiquiatria</option><option>Outra</option>
+</select><div class="actions"><a href="/">Cancelar</a><button type="submit">Salvar</button></div>
+</form></main></body></html>

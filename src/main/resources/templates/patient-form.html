@@ -1,1 +1,20 @@
-<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><title>Novo paciente</title><link rel="stylesheet" th:href="@{/css/style.css}"></head><body><main><a th:href="@{/}">← Voltar</a><h1>Cadastrar paciente</h1><form th:action="@{/patients}" th:object="${patient}" method="post"><label>Nome<input th:field="*{name}" required></label><label>CPF<input th:field="*{cpf}" required></label><label>Telefone<input th:field="*{phone}" required></label><label>E-mail<input type="email" th:field="*{email}"></label><label>Data de nascimento<input type="date" th:field="*{birthDate}" required></label><p class="message error" th:each="err : ${#fields.allErrors()}" th:text="${err}"></p><button>Salvar paciente</button></form></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastrar paciente | MediAgenda</title><link rel="stylesheet" th:href="@{/css/clinical.css}"></head>
+<body><main class="clinical-screen registration">
+<h1>Cadastrar paciente</h1>
+<form th:action="@{/patients}" th:object="${patient}" method="post">
+<p class="notice error" th:each="err : ${#fields.allErrors()}" th:text="${err}"></p>
+<label for="name">Nome completo</label>
+<input id="name" type="text" th:field="*{name}" placeholder="Nome do paciente" required>
+<label for="cpf">CPF</label>
+<input id="cpf" type="text" th:field="*{cpf}" placeholder="000.000.000-00" required>
+<label for="birthDate">Data de nascimento</label>
+<input id="birthDate" type="date" th:field="*{birthDate}" placeholder="" required>
+<label for="phone">Telefone</label>
+<input id="phone" type="tel" th:field="*{phone}" placeholder="(00) 00000-0000" required>
+<label for="email">Email</label>
+<input id="email" type="email" th:field="*{email}" placeholder="paciente@email.com" required>
+<div class="actions"><a href="/">Cancelar</a><button type="submit">Salvar</button></div>
+</form></main></body></html>

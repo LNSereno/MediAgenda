@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+<section class="panel" th:fragment="history">
+  <h2 th:text="${'Histórico — ' + patient.name}">Histórico do paciente</h2>
+  <p class="empty" th:if="${#lists.isEmpty(records)}">Este paciente ainda não possui prontuários.</p>
+  <details class="history-item" th:each="record : ${records}">
+    <summary>
+      <time th:text="${#temporals.format(record.appointment.scheduledAt, 'dd/MM/yyyy HH:mm')}"></time>
+      <span th:text="${record.diagnosis + ' — ' + record.appointment.doctor.name}"></span>
+    </summary>
+    <dl>
+      <dt>Diagnóstico</dt><dd th:text="${record.diagnosis}"></dd>
+      <dt>Prescrição</dt><dd th:text="${record.prescription}"></dd>
+      <th:block th:unless="${#strings.isEmpty(record.notes)}">
+        <dt>Observações</dt><dd th:text="${record.notes}"></dd>
+      </th:block>
+    </dl>
+  </details>
+</section>
+</body>
+</html>

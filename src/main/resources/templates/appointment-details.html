@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consulta | MediAgenda</title><link rel="stylesheet" th:href="@{/css/clinical.css}"></head>
+<body><main class="clinical-screen registration">
+<a class="back" href="/">Voltar à agenda</a>
+<h1 th:text="${'Consulta #' + appointment.id}"></h1>
+<section class="panel visit-info">
+<p>Paciente: <span th:text="${appointment.patient.name}"></span></p>
+<p>Médico: <span th:text="${appointment.doctor.name}"></span></p>
+<p>Data/Horário: <span th:text="${#temporals.format(appointment.scheduledAt, 'dd/MM/yyyy HH:mm')}"></span></p>
+<p>Status: <strong th:text="${appointment.status}"></strong></p>
+</section>
+<form th:if="${appointment.open}" th:action="@{/appointments/{id}/cancel(id=${appointment.id})}" method="post">
+<label for="reason">Motivo do cancelamento (se aplicável)</label>
+<input id="reason" name="reason" placeholder="Ex: imprevisto pessoal" maxlength="255" required>
+<button class="cancel">Cancelar consulta</button>
+</form>
+<form th:if="${appointment.status.name() == 'AGENDADA'}" th:action="@{/appointments/{id}/confirm(id=${appointment.id})}" method="post"><button>Confirmar presença</button></form>
+<form th:if="${appointment.open}" th:action="@{/appointments/{id}/complete(id=${appointment.id})}" method="post"><button>Concluir atendimento</button></form>
+<a class="primary-link" th:if="${appointment.status.name() == 'REALIZADA'}" th:href="@{/appointments/{id}/record(id=${appointment.id})}">Abrir prontuário</a>
+<p class="empty" th:if="${appointment.status.name() == 'CANCELADA'}" th:text="${appointment.cancellationReason}"></p>
+</main></body></html>

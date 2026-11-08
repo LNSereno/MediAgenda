@@ -43,6 +43,8 @@ public class MedicalRecordController {
             return "redirect:/";
         }
         model.addAttribute("appointment", appointment);
+        model.addAttribute("patient", appointment.getPatient());
+        model.addAttribute("records", records.findByAppointmentPatientIdOrderByAppointmentScheduledAtDescIdDesc(appointment.getPatient().getId()));
         return "record-form";
     }
 

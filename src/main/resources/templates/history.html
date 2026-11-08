@@ -4,26 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Histórico do paciente | MediAgenda</title>
-  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/clinical.css}">
 </head>
 <body>
-<header><img th:src="@{/logo.svg}" alt=""><strong>MediAgenda</strong></header>
-<main>
-  <nav><a href="/">Voltar à agenda</a></nav>
+<main class="clinical-screen">
+  <a class="back" href="/">Voltar à agenda</a>
+  <p class="notice success" role="status" th:if="${success}" th:text="${success}"></p>
 
-  <h1>Histórico do paciente</h1>
-  <p th:text="${patient.name}"></p>
-  <p class="message success" role="status" th:if="${success}" th:text="${success}"></p>
-  <section th:if="${#lists.isEmpty(records)}">Este paciente ainda não possui prontuários.</section>
-  <section th:each="record : ${records}" class="entry">
-    <h2 th:text="${#temporals.format(record.appointment.scheduledAt, 'dd/MM/yyyy HH:mm')}"></h2>
-    <p th:text="${record.appointment.doctor.name + ' • ' + record.appointment.doctor.specialty}"></p>
-    <dl>
-      <dt>Diagnóstico</dt><dd th:text="${record.diagnosis}"></dd>
-      <dt>Prescrição</dt><dd th:text="${record.prescription}"></dd>
-      <th:block th:unless="${#strings.isEmpty(record.notes)}">
-        <dt>Observações</dt><dd th:text="${record.notes}"></dd>
-      </th:block>
-    </dl>
-  </section>
-</main></body></html>
+  <section th:replace="~{clinical-fragments :: history}"></section>
+</main>
+</body>
+</html>

@@ -1,1 +1,17 @@
-<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><title>Agendar consulta</title><link rel="stylesheet" th:href="@{/css/style.css}"></head><body><main><a th:href="@{/}">← Voltar</a><h1>Agendar consulta</h1><p th:if="${#lists.isEmpty(patients) or #lists.isEmpty(doctors)}">Cadastre ao menos um paciente e um médico antes de agendar.</p><form th:unless="${#lists.isEmpty(patients) or #lists.isEmpty(doctors)}" th:action="@{/appointments}" method="post"><label>Paciente<select name="patientId" required><option th:each="patient : ${patients}" th:value="${patient.id}" th:text="${patient.name}"></option></select></label><label>Médico<select name="doctorId" required><option th:each="doctor : ${doctors}" th:value="${doctor.id}" th:text="${doctor.name + ' - ' + doctor.specialty}"></option></select></label><label>Data e hora<input type="datetime-local" name="scheduledAt" required></label><button>Agendar</button></form></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar consulta | MediAgenda</title><link rel="stylesheet" th:href="@{/css/clinical.css}"></head>
+<body><main class="clinical-screen registration">
+<a class="back" href="/">Voltar à agenda</a>
+<h1>Agendar consulta</h1>
+<p class="notice error" role="alert" th:if="${error}" th:text="${error}"></p>
+<p class="empty" th:if="${#lists.isEmpty(patients) or #lists.isEmpty(doctors)}">Cadastre ao menos um paciente e um médico antes de agendar.</p>
+<form th:unless="${#lists.isEmpty(patients) or #lists.isEmpty(doctors)}" th:action="@{/appointments}" method="post">
+<label for="patientId">Paciente</label>
+<select id="patientId" name="patientId" required><option th:each="patient : ${patients}" th:value="${patient.id}" th:text="${patient.name}"></option></select>
+<label for="doctorId">Médico</label>
+<select id="doctorId" name="doctorId" required><option th:each="doctor : ${doctors}" th:value="${doctor.id}" th:text="${doctor.name + ' — ' + doctor.specialty}"></option></select>
+<label for="scheduledAt">Data e horário</label><input id="scheduledAt" type="datetime-local" name="scheduledAt" required>
+<button>Confirmar agendamento</button>
+</form></main></body></html>

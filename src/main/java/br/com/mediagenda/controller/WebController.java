@@ -41,13 +41,27 @@ public class WebController {
         return "index";
     }
 
+    @GetMapping("/appointments/{id}")
+    public String appointmentDetails(@PathVariable Long id, Model model) {
+        model.addAttribute("appointment", appointmentRepository.findById(id).orElseThrow(() ->
+                new org.springframework.web.server.ResponseStatusException(
+                        org.springframework.http.HttpStatus.NOT_FOUND, "Consulta não encontrada.")));
+        return "appointment-details";
+    }
+
     @GetMapping("/patients/new")
     public String patientForm(Model model) { model.addAttribute("patient", new Patient()); return "patient-form"; }
 
     @PostMapping("/patients")
     public String createPatient(@Valid @ModelAttribute Patient patient, BindingResult result, RedirectAttributes redirect) {
+        if (patient.getBirthDate() == null) result.rejectValue("birthDate", "required", "Informe a data de nascimento.");
         if (result.hasErrors()) return "patient-form";
-        patientRepository.save(patient);
+        try {
+            patientRepository.save(patient);
+        } catch (org.springframework.dao.DataIntegrityViolationException ex) {
+            result.rejectValue("cpf", "duplicate", "Já existe um paciente com esse CPF.");
+            return "patient-form";
+        }
         redirect.addFlashAttribute("success", "Paciente cadastrado com sucesso.");
         return "redirect:/";
     }
@@ -57,8 +71,15 @@ public class WebController {
 
     @PostMapping("/doctors")
     public String createDoctor(@Valid @ModelAttribute Doctor doctor, BindingResult result, RedirectAttributes redirect) {
+        if (doctor.getPhone() == null || doctor.getPhone().isBlank()) result.rejectValue("phone", "required", "Informe o telefone.");
+        if (doctor.getEmail() == null || doctor.getEmail().isBlank()) result.rejectValue("email", "required", "Informe o e-mail.");
         if (result.hasErrors()) return "doctor-form";
-        doctorRepository.save(doctor);
+        try {
+            doctorRepository.save(doctor);
+        } catch (org.springframework.dao.DataIntegrityViolationException ex) {
+            result.rejectValue("crm", "duplicate", "Já existe um médico com esse CRM.");
+            return "doctor-form";
+        }
         redirect.addFlashAttribute("success", "Médico cadastrado com sucesso.");
         return "redirect:/";
     }
