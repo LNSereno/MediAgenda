@@ -32,96 +32,90 @@ Não houve entrada ou saída de integrantes registrada até esta entrega.
 | --- | --- | --- | --- |
 | Nenhuma alteração registrada | - | - | - |
 
+## Como executar
+
+Requisitos: Java 17 e Maven 3.9 ou superior. Na pasta do projeto:
+
+```bash
+mvn test
+mvn spring-boot:run
+```
+
+Abra http://localhost:8080. O banco H2 fica em `data/mediagenda` e preserva os dados entre execuções. Use dados fictícios nas gravações.
+
+## Sequência das entregas
+
+| Etapa | Escopo | Material |
+| --- | --- | --- |
+| 01 | Sete histórias em BDD e protótipo Lo-Fi | Links originais abaixo |
+| 02 | Histórias 1, 2 e 3 — pacientes, médicos e agenda | [Guia e dois roteiros](docs/entrega-02/GUIA.md) |
+| 03 | Histórias 4 e 5 — cancelar e confirmar | [Guia e dois roteiros](docs/entrega-03/GUIA.md) |
+| 04 | Histórias 6 e 7 — prontuário e histórico | [Guia e dois roteiros](docs/entrega-04/GUIA.md) |
+
+A entrega 02 foi complementada após o prazo original. A revisão e a organização das etapas 02 e 03 foram realizadas em 08/11/2026. As datas efetivas de implementação e acompanhamento constam nos commits e nas Issues do GitHub.
+
 ## Entrega 1
 
 - [Histórias em BDD](./Histórias_BDD.md)
 - [Protótipo Lo-Fi (Figma)](https://www.figma.com/design/UEResJqM7OeZHOcTmodCFX/MediAgenda---Prot%C3%B3tipo-Lo-Fi?node-id=3-46&p=f&t=iy5O8tKdYP0rVKmC-0)
 - [Screencast (YouTube)](https://youtu.be/cMknoEeaaEY)
 
+
 ## Entrega 02
 
-Esta etapa não foi implementada pela equipe. A base necessária para as histórias da Entrega 03 foi incluída nesta branch, sem criar evidências retroativas.
+### Histórias implementadas (POST-IT)
+
+> **História 1** — Como recepcionista da clínica, quero cadastrar um novo paciente no sistema, para que ele possa agendar consultas futuramente.
+
+> **História 2** — Como administrador do consultório, quero cadastrar um médico com sua especialidade, para que ele possa ser associado a consultas.
+
+> **História 3** — Como paciente ou recepcionista, quero agendar uma consulta com um médico em uma data e horário específicos, para garantir o atendimento.
+
+[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-02/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/3)
+
+Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la nesta seção, conforme o guia.
+
+- Vídeo de uso no YouTube — **A gravar**.
+- Vídeo de código no YouTube — **A gravar**.
 
 ## Entrega 03
 
-### Histórias implementadas (formato POST-IT)
+### Histórias implementadas (POST-IT)
 
-> **História 4 - Cancelamento de consulta**
->
-> **Como** paciente, **quero** cancelar uma consulta agendada e informar o motivo, **para** liberar o horário caso eu não possa comparecer.
->
-> **Pronto quando:** a consulta muda para `CANCELADA`, o motivo fica persistido e o horário pode ser usado novamente pelo mesmo médico.
+> **História 4** — Como paciente, quero cancelar uma consulta agendada, para liberar o horário caso eu não possa comparecer.
 
-> **História 5 - Confirmação de consulta**
->
-> **Como** paciente, **quero** confirmar minha presença em uma consulta agendada, **para** que a clínica saiba que devo comparecer.
->
-> **Pronto quando:** uma consulta `AGENDADA` muda para `CONFIRMADA` e o novo status permanece salvo ao recarregar a página.
+> **História 5** — Como paciente, quero confirmar minha presença em uma consulta agendada, para que a clínica saiba que devo comparecer.
 
-### O que foi desenvolvido
+[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-03/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/4)
 
-- Aplicação Spring Boot com interface web em Thymeleaf.
-- Persistência JPA de pacientes, médicos e consultas (três entidades de domínio), usando H2 local.
-- Cadastro dos dados mínimos que sustentam a agenda e bloqueio de conflito de horário do médico.
-- Confirmação de presença e cancelamento com motivo persistido.
-- Testes unitários das regras principais de agenda.
-- Sem Lombok ou outro gerador de código boilerplate.
+Captura da Issue desta etapa: a equipe deve registrar a tela atual e inseri-la nesta seção, conforme o guia.
 
-### Como rodar
-
-Pré-requisito: Java 17 e Maven 3.9 ou superior.
-
-```bash
-mvn spring-boot:run
-```
-
-Abra [http://localhost:8080](http://localhost:8080). Os dados ficam em `data/mediagenda` e são preservados entre execuções locais. Para executar os testes:
-
-```bash
-mvn test
-```
-
-### Evidências a serem incluídas pela equipe
-
-- Vídeo do sistema: **pendente** - grave seguindo as [instruções](docs/entrega-03/COMPLEMENTOS_MANUAIS.md) e substitua este marcador pelo link real do YouTube.
-- Vídeo explicando o código: **pendente** - grave seguindo as [instruções](docs/entrega-03/COMPLEMENTOS_MANUAIS.md) e substitua este marcador pelo link real do YouTube.
-- Issues do GitHub: nenhuma issue existia no repositório na análise. Crie/atualize issues reais, capture a tela e salve-a como `docs/entrega-03/evidencias/issues-entrega-03.png`; então troque este texto pela imagem real.
+- Vídeo de uso no YouTube — **A gravar**.
+- Vídeo de código no YouTube — **A gravar**.
 
 ## Entrega 04
 
-### Histórias implementadas
+### Histórias implementadas (POST-IT)
 
-**6 · Registro de prontuário após consulta**
+> **História 6** — Como médico, quero registrar diagnóstico e prescrição após atender um paciente, para manter o histórico clínico atualizado.
 
-> Como médico, quero registrar diagnóstico e prescrição após atender um paciente, para manter o histórico clínico atualizado.
+> **História 7** — Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
 
-Na agenda, conclua o atendimento e abra **Prontuário**. O formulário identifica o paciente, o médico e a data da consulta. Ao salvar o diagnóstico, a prescrição e as observações opcionais, o sistema abre o histórico daquele paciente. Cada consulta realizada admite um registro.
+[Roteiro do vídeo de uso e do vídeo de código](docs/entrega-04/GUIA.md) · [Cenários BDD e aceite](docs/cenarios-validacao.md) · [Issue da etapa](https://github.com/LNSereno/MediAgenda/issues/2)
 
-**7 · Consulta ao histórico do paciente**
+![Captura da Issue da entrega 04](docs/entrega-04/issue-02.jpg)
 
-> Como médico, quero visualizar o histórico de prontuários de um paciente, para ter contexto sobre atendimentos anteriores.
+- Vídeo de uso no YouTube — **A gravar**.
+- Vídeo de código no YouTube — **A gravar**.
 
-Na lista **Pacientes**, abra o nome desejado. Os prontuários aparecem pela data do atendimento, do mais recente ao mais antigo. Quando o paciente ainda não tem registros, a página informa isso.
+## Apresentação final
 
-### Cenários de validação
+[Roteiro de 7 minutos e 30 segundos, com demonstração e divisão sugerida entre os integrantes](docs/apresentacao-final.md).
 
-| Dado | Quando | Então |
-| --- | --- | --- |
-| Uma consulta realizada | O médico salva diagnóstico, prescrição e observações | O prontuário fica associado à consulta e aparece no histórico do paciente |
-| Uma consulta ainda agendada | Há uma tentativa de registrar o prontuário | O registro é recusado |
-| Uma consulta já tem prontuário | O médico abre novamente o prontuário pela agenda | O sistema abre o histórico com o registro salvo |
-| Um paciente tem três prontuários e outro tem um | O médico abre o perfil do primeiro paciente | Aparecem apenas os três atendimentos dele, em ordem decrescente de data |
+## Verificação
 
-Os cadastros desta versão também contemplam a data de nascimento do paciente e os contatos do médico previstos na entrega 1. A especialidade pode ser selecionada no formulário.
+O projeto usa quatro entidades persistidas, Spring Boot, Thymeleaf e H2. Cada história consulta ou grava dados no banco. Getters, setters e construtores são escritos explicitamente.
 
-[Histórias e cenários originais](./Histórias_BDD.md) · [Testes das regras de prontuário e histórico](./src/test/java/br/com/mediagenda/ClinicalHistoryTest.java) · [Teste do fluxo web](./src/test/java/br/com/mediagenda/ClinicalWebTest.java)
+[Registro dos testes e verificações](docs/entrega-04/verificacao.md). Os oito testes passaram na revisão de 08/11/2026.
 
-### Acompanhamento no GitHub
-
-[Issue #2 — registro de prontuário e histórico](https://github.com/LNSereno/MediAgenda/issues/2)
-
-![Issue da entrega 04 com os critérios de implementação e verificação](./docs/entrega-04/issue-02.jpg)
-
-### Vídeos da entrega
-
-A publicação dos dois screencasts no YouTube está pendente.
+A entrega documental fica completa depois que a equipe publicar os seis vídeos das etapas 02 a 04 e incluir as capturas atuais das Issues 02 e 03. O histórico semanal exigido pelo professor deve ser avaliado pelas datas reais do GitHub.
