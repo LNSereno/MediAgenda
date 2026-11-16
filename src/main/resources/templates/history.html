@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Histórico do paciente | MediAgenda</title>
-  <link rel="stylesheet" th:href="@{/css/clinical.css}">
-</head>
+  <link rel="stylesheet" th:href="@{/css/clinical.css(v=3)}">
+<link rel="icon" type="image/svg+xml" href="/logo.svg"><script src="/js/ui.js?v=3" defer></script></head>
 <body>
-<main class="clinical-screen">
+<main class="clinical-screen"><a class="clinical-brand" href="/" aria-label="MediAgenda — página inicial"><img src="/logo.svg" alt="" width="38" height="38"><span>Medi<strong>Agenda</strong></span></a>
   <a class="back" href="/">Voltar à agenda</a>
   <p class="notice success" role="status" th:if="${success}" th:text="${success}"></p>
 
