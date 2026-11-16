@@ -12,9 +12,21 @@ O sistema busca facilitar a rotina administrativa de clínicas de pequeno e méd
 
 ## Tecnologias e ferramentas
 
-- Java, Spring Boot, Spring Data JPA
-- Thymeleaf, HTML5 e CSS3
-- H2 (banco local para desenvolvimento)
+| Tecnologia ou ferramenta | Uso no MediAgenda |
+| --- | --- |
+| [Java 17](https://docs.oracle.com/en/java/javase/17/) | Linguagem usada para escrever as classes e as regras do sistema. |
+| [Spring Boot 3.4.2](https://spring.io/projects/spring-boot/) | Organiza e inicia a aplicação web Java, com as configurações e dependências necessárias. |
+| [Spring Web MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html) | Recebe as ações das páginas nos controllers e direciona as respostas, como abrir um formulário ou salvar um prontuário. |
+| [Spring Data JPA](https://spring.io/projects/spring-data-jpa/) | Facilita salvar e consultar pacientes, médicos, consultas e prontuários no banco por meio dos repositórios. |
+| [Thymeleaf](https://www.thymeleaf.org/) | Preenche as páginas HTML com os dados enviados pelo código Java, como a agenda e o histórico do paciente. |
+| [HTML](https://html.spec.whatwg.org/) | Define a estrutura das páginas, dos formulários e dos botões. |
+| [CSS](https://www.w3.org/Style/CSS/) | Define cores, fontes, espaçamentos e organização visual das telas. |
+| [H2 Database](https://www.h2database.com/) | Banco de dados que guarda as informações em arquivo local; os testes de integração usam um banco temporário em memória. |
+| [Apache Maven](https://maven.apache.org/) | Gerencia as dependências do projeto e executa comandos para compilar, testar e iniciar a aplicação. |
+| [JUnit](https://junit.org/) | Executa testes automatizados das regras, como impedir prontuários duplicados e ordenar o histórico por paciente. |
+| [Visual Studio Code](https://code.visualstudio.com/) | Editor utilizado para abrir e trabalhar nos arquivos do projeto e executar comandos no terminal. |
+| [GitHub](https://github.com/) | Hospeda o código, mantém o histórico de alterações e reúne as issues e a documentação das entregas. |
+| [Figma](https://www.figma.com/) | Ferramenta usada para criar o protótipo das telas e da navegação na primeira entrega. |
 
 ## Equipe
 | Nome | email |
